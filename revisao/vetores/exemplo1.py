@@ -15,3 +15,6 @@ for i in range(0, len(x)):
 # Foreach
 for i in x:
   print(i)
+
+# https://www.youtube.com/watch?v=FCC2GbStmfc
+
