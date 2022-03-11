@@ -6,6 +6,7 @@ while True:
   v = int(input("Digite 0, 1, 2 - qualquer outro número para a repetição"))
   if v>=0 and v<3:
     x.append(v)
+    b[v]=b[v]+1
   else:
     break 
 

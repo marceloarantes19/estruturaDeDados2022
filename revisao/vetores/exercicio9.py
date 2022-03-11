@@ -1,7 +1,5 @@
 x = []
-i = -1
 while True:
-  i = i + 1
   v = int(input("Digite um número (valor negativo para a entrada de Dados): "))
   if v>=0:
     x.append(v)
