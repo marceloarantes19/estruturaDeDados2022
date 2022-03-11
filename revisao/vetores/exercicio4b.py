@@ -8,5 +8,5 @@ for i in range(0, len(x)//2):
 if y:
   print(x," é palindrome!")
 else:
-  print(x, " não é palindrome!")
+  print(x, " não é palindrome!") 
 
