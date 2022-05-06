@@ -24,7 +24,6 @@ def heap(arr):
         arr[i], arr[0] = arr[0], arr[i]  # troca
         geraHeap(arr, i, 0)
 
-
 x = [2, 7, 8, 1, 3, 6, 9]
 heap(x)
 print("Fim do algoritmo -", x)
