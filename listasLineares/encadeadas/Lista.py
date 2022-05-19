@@ -14,6 +14,7 @@ class Lista:
   def insereNoInicio(self, n): # n é um nó
     n.setProximo(self.getCabeca().getProximo())
     self.getCabeca().setProximo(n)
+
   def retiraNoInicio(self):
     ret = None
     if not self.listaVazia():
@@ -37,5 +38,18 @@ class Lista:
       aux1.setProximo(None)
       ret = aux2
     return ret
+  def mostraLista(self):
+    if not self.listaVazia():
+      aux = self.getCabeca().getProximo()
+      while aux != None:
+        print(aux.getElemento().getValores())
+        aux = aux.getProximo()
+  def mostraListaRecursivo(self, atual):
+    if atual != None:
+        print(atual.getElemento().getValores())
+        self.mostraListaRecursivo(atual.getProximo())
 
-
+  def mostraListaInvertida(self, atual):
+    if atual != None:
+        self.mostraListaInvertida(atual.getProximo())
+        print(atual.getElemento().getValores())

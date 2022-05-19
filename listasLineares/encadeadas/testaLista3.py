@@ -12,7 +12,7 @@ for i in x:
   n = No(elem)
   l.insereNoFim(n)
 print('Lista do primeiro para o último:')
-l.mostraLista()
-estaciona = input("Pressione enter para seguir")
-while not l.listaVazia():
-  print(l.retiraNoInicio().getElemento().getNome())
+l.mostraListaRecursivo(l.getCabeca().getProximo())
+
+print('Lista do Invertida:')
+l.mostraListaInvertida(l.getCabeca().getProximo())

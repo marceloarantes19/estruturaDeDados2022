@@ -1,7 +1,9 @@
+from Pilha import Pilha
 from Elemento import Elemento 
 from No import No 
 from Lista import Lista 
 l = Lista()
+p = Pilha()
 x = input('Digite um nome: ')
 j = 0
 for i in x:
@@ -13,6 +15,11 @@ for i in x:
   l.insereNoFim(n)
 print('Lista do primeiro para o último:')
 l.mostraLista()
-estaciona = input("Pressione enter para seguir")
 while not l.listaVazia():
-  print(l.retiraNoInicio().getElemento().getNome())
+  p.empilha(l.retiraNoInicio())
+
+while not p.pilhaVazia():
+  l.insereNoFim(p.desempilha())
+
+print('Lista do Invertida:')
+l.mostraLista()
