@@ -1,3 +1,6 @@
+# Essa versão da Classe Lista contém os exercícios 3,4,5,6,7 e 8 corrigidos
+# tente resolver os mesmos (alterando o Lista.py original) sem consultar as
+# respostas dadas aqui - BONS ESTUDOS a todos!
 from Elemento import Elemento
 from No import No
 class Lista:
@@ -94,3 +97,53 @@ class Lista:
     if atual != None:
         self.mostraListaInvertida(atual.getProximo())
         print(atual.getElemento().getValores())
+
+  # Correção do Exercício 3 - INTERATIVO
+  def getQtdDeElementos(self):
+    aux = self.getCabeca().getProximo()
+    ret = 0
+    while aux != None:
+      ret = ret + 1
+      aux = aux.getProximo()
+    return ret
+
+  # Correção do Exercício 3 - RECURSIVO
+  def getQtdDeElementosRec(self, n): # programa principal deve mandar o __cabeca.getProximo()
+    return 0 if n == None else self.getQtdDeElementosRec(n.getProximo()) + 1
+  
+  # Correção do Exercício 6
+  def insereNaPosicao(self, n, p): # n é um nó e p é a posicao
+    # Verifica se é uma posição existente
+    if p > 0 and p <= self.getQtdDeElementos()+1:
+      atu = 1
+      aux = self.getCabeca()
+      while atu < p and aux.getProximo() != None:
+        aux = aux.getProximo()
+        atu = atu + 1
+      n.setProximo(aux.getProximo())
+      aux.setProximo(n)        
+    else:
+      print('Erro: Posição inválida - nó não inserido!!!')
+
+  # Correção do Exercício 7
+  def retiraNaPosicao(self, p): # n é um nó e p é a posicao
+    ret = None
+    # Verifica se é uma posição existente
+    if not self.listaVazia() and p > 0 and p <= self.getQtdDeElementos():
+      atu = 1
+      aux = self.getCabeca()
+      while atu < p and aux.getProximo() != None:
+        aux = aux.getProximo()
+        atu = atu + 1
+      ret = aux.getProximo()
+      aux.setProximo(ret.getProximo())
+      ret.setProximo(None)
+    else:
+      print('Erro: Posição inválida - nó não inserido!!!')
+    return ret
+
+  # Correção do Exercício 8
+  def limpaLista(self, n):
+    if n != None:
+      self.limpaLista(n.getProximo())
+      n.setProximo(None)
