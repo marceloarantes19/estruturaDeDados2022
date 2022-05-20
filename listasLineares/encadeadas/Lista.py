@@ -58,6 +58,7 @@ class Lista:
     n.setProximo(auxProx)
     aux.setProximo(n)
 
+  # Método para retirar dados a partir da chave
   def retiraNoChave(self, v):
     ret = None
     if not self.listaVazia():
@@ -72,7 +73,9 @@ class Lista:
         ret.setProximo(None)
       else:
         aux.setProximo(None)
-    return ret  
+    return ret
+
+  # Método INTERATIVO para mostrar os elementos da lista
   def mostraLista(self):
     if not self.listaVazia():
       aux = self.getCabeca().getProximo()
@@ -80,11 +83,13 @@ class Lista:
         print(aux.getElemento().getValores())
         aux = aux.getProximo()
 
+  # Método RECURSIVO para mostrar os elementos da lista
   def mostraListaRecursivo(self, atual):
     if atual != None:
         print(atual.getElemento().getValores())
         self.mostraListaRecursivo(atual.getProximo())
 
+  # Método RECURSIVO para mostrar os elementos da lista do último para o primeiro
   def mostraListaInvertida(self, atual):
     if atual != None:
         self.mostraListaInvertida(atual.getProximo())
