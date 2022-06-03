@@ -1,6 +1,6 @@
 # Exercício 2 - Correção
 from Lista import Lista
-class FilaEncadada (Lista):
+class FilaEncadeada (Lista):
   def filaVazia(self):
     return self.listaVazia()
   def enQueue(self, n): # Enfileirar

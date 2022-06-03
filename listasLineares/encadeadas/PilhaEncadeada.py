@@ -1,6 +1,6 @@
 # Exercício 1 - Correção
 from Lista import Lista
-class PilhaEncadada (Lista):
+class PilhaEncadeada (Lista):
   def pilhaVazia(self):
     return self.listaVazia()
   def push(self, n):    # Empilhar
