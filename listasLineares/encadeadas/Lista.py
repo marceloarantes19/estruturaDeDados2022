@@ -37,43 +37,39 @@ class Lista:
 
   # Método para retirar dados no fim da Lista
   def retiraNoFim(self):
-    ret = None
+    atual = None
     if not self.listaVazia():
-      aux1 = self.getCabeca()
-      aux2 = self.getCabeca().getProximo()
-      while aux2.getProximo() != None:
-        aux1 = aux2
-        aux2 = aux2.getProximo()
-      aux1.setProximo(None)
-      ret = aux2
-    return ret
+      aux = self.getCabeca()
+      atual = self.getCabeca().getProximo()
+      while atual.getProximo() != None:
+        aux = atual
+        atual = aux.getProximo()
+      aux.setProximo(None)
+    return atual
 
   # Método para inserir dados ordenados pela chave
   def insereOrdenadoChave(self, n):
     aux = self.getCabeca()
-    auxProx = aux.getProximo()
-    while auxProx != None and n.getElemento().getChave()>auxProx.getElemento().getChave():
-      aux = auxProx
-      auxProx = aux.getProximo()
-    n.setProximo(auxProx)
+    atual = aux.getProximo()
+    while atual != None and n.getElemento().getChave()>atual.getElemento().getChave():
+      aux = atual
+      atual = aux.getProximo()
+    n.setProximo(atual)
     aux.setProximo(n)
 
   # Método para retirar dados a partir da chave
   def retiraNoChave(self, v):
-    ret = None
+    atual = None
     if not self.listaVazia():
       aux = self.getCabeca()
-      auxProx = aux.getProximo()
-      while auxProx != None and v!=auxProx.getElemento().getChave():
-        aux = auxProx
-        auxProx = aux.getProximo()
-      ret = auxProx
-      if auxProx != None:
-        aux.setProximo(auxProx.getProximo())
-        ret.setProximo(None)
-      else:
-        aux.setProximo(None)
-    return ret
+      atual = aux.getProximo()
+      while atual != None and v!=atual.getElemento().getChave():
+        aux = atual
+        atual = aux.getProximo()
+      if atual != None:
+        aux.setProximo(atual.getProximo())
+        atual.setProximo(None)
+    return atual
 
   # Método INTERATIVO para mostrar os elementos da lista
   def mostraLista(self):
